@@ -54,7 +54,7 @@ if __name__ == '__main__':
     btn3.setText(QCoreApplication.translate("MainWindow", u"Выйти", None))
 
     mmConfig = MenuConfig.MainMenuConfig(ScreenSize.HEIGHT_1080, ScreenSize.WIDTH_1920)
-    optConfig = OptionsConfig.OptionsConfig()
+    optConfig = OptionsConfig.OptionsConfig(ScreenSize.HEIGHT_1080, ScreenSize.WIDTH_1920)
 
     window = MainWindow(mmConfig)
 
