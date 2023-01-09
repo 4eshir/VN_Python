@@ -72,6 +72,7 @@ if __name__ == '__main__':
     mmConfig.countRowGrid = 3
     mmConfig.menuPositionRow = 1
     mmConfig.menuPositionCol = 1
+    mmConfig.backPath = "images/back_anime.gif"
 
     window.config = mmConfig
 

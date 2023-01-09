@@ -9,6 +9,9 @@ from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QMainWindow,
     QMenuBar, QPushButton, QSizePolicy, QVBoxLayout,
     QWidget)
 
+from PySide6 import QtCore
+from PySide6 import QtGui
+
 from common.constants import System
 from configuration.MenuConfig import MainMenuConfig, MainMenuConstructor
 from configuration.BaseAppConfig import GameWindowConfig
@@ -35,8 +38,9 @@ class Ui_MainWindow(object):
             self.uiWindow.setObjectName(u"MainWindow")
         self.uiWindow.resize(self.config.windowWidth, self.config.windowHeight)
         self.uiWindow.setStyleSheet(
-            "#centralwidget {border-image: url(" + System.APP_PATH + "/images/back.jpg) 0 0 0 0 stretch stretch}"
+            "#centralwidget {border-image: url(" + System.APP_PATH + "/" + self.config.backPath + ") 0 0 0 0 stretch stretch}"
         )
+
         self.centralwidget = QWidget(self.uiWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
@@ -45,6 +49,10 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
         self.centralwidget.setSizePolicy(sizePolicy)
 
+        self.uiWindow.label_m = QLabel(self.centralwidget)
+        self.uiWindow.label_m.setObjectName(u"label_m")
+        self.gridLayout = QGridLayout()
+        self.gridLayout.addWidget(self.uiWindow.label_m, 0, 0, 1, 1)
 
         self.uiWindow.setCentralWidget(self.centralwidget)
 

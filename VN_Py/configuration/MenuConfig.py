@@ -2,6 +2,10 @@ from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QMainWindow,
     QMenuBar, QPushButton, QSizePolicy, QVBoxLayout, QSpacerItem,
     QWidget)
 
+from PyQt5.QtGui import QMovie
+from PySide6 import QtCore
+from PySide6 import QtGui
+
 from configuration.BaseAppConfig import GameWindowConfig
 from configuration.DefaultAppFunctions import DefaultMainMenuFunctions
 from common.constants import System, ScreenSize, ButtonType
@@ -29,6 +33,8 @@ class MainMenuConfig(GameWindowConfig):
 
         self.menuPositionRow = 0  # расположение главного меню - номер строки
         self.menuPositionCol = 0 # расположение главного меню - номер столбца
+
+        self.backPath = "" # путь к фоновому изображению
 
         # меню - номер столбца
 
