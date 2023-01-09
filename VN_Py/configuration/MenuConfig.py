@@ -37,16 +37,14 @@ class MainMenuConfig(GameWindowConfig):
 
         # ---------------------------
 
-    def setupConfig(self, cRow, cCol, rHeights, cWidth, menuX, menuY, bHeights, bUpDown, bLeftRight):
+    def setupConfig(self, cRow, cCol, rHeights, cWidth, menuR, menuC, bHeights):
         self.countRowGrid = cRow
         self.countColGrid = cCol
         self.rowHeights = rHeights
         self.colWidth = cWidth
-        self.menuPositionX = menuX
-        self.menuPositionY = menuY
+        self.menuPositionRow = menuR
+        self.menuPositionCol = menuC
         self.buttonHeights = bHeights
-        self.buttonUpDownMargins = bUpDown
-        self.buttonLeftRightMargins = bLeftRight
 
 
 class MainMenuConstructor:
@@ -100,7 +98,7 @@ class MainMenuConstructor:
         #--------------------------------------------
 
 
-        #--Настройка высоты кнопок и отуступов между ними--
+        #--Настройка высоты кнопок и отступов между ними--
         btnCount = 0
         spcCount = 0
         for i in range(window.verticalLayout.count()):
@@ -110,7 +108,7 @@ class MainMenuConstructor:
             else:
                 window.verticalLayout.setStretch(i, window.config.buttonSpacer[spcCount])
                 spcCount += 1
-        # --------------------------------------------------
+        # -------------------------------------------------
 
         MainMenuConstructor.connectButtonSignal(window)
 
